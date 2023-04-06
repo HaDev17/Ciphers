@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #101111;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin: 15px;
+    color: white;
+    font-size: 55px;
+}
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    min-height: 100vh;
+}
+.circle {
+    display: grid;
+    transition: .7s ease-out;
+  }
+  .move {
+    display: grid;
+    position: relative;
+    left: 0;
+    /* animation: move 1s linear; */
+  }
+  @keyframes move {
+    from{
+      left: 100%;
+    }
+    to {
+      left: 0;
+    }
+  }
+  
+  /* .circle:hover {
+    transform: translateY(-15px);
+    cursor:auto
+  } */
+  
+  .layer_1 ,.layer_2, .layer_3 {
+    grid-column: 1;
+    grid-row: 1;
+    width: 500px;
+
+  } 
+  
+  .layer_2 svg{
+    filter: blur(0px);
+    border-radius: 50%;
+    transition: .2s linear;
+  }
+  
+  .layer_3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transition: .5s ease-in;
+  }
+  /* .layer_3:hover{
+    transform: scaleX(-1) rotate(0deg);
+  } */
+  @keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(13deg);
+    }
+  }
+
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    width: 500px;
+    height: 500px;
+    padding: 50px 0;
+  }
+
+  textarea{
+    resize: none;
+    font-size: 25px;
+    background: #00000091;
+    border-radius: 15px;
+    padding: 12px;
+    color: #67c401;
+    opacity: 50%;
+  }
+
+  input {
+    width: 435px;
+    border-radius: 15px;
+    margin-top: 15px;
+    height: 74px;
+    padding: 2px 12px;
+    background-color: #070707;
+    color: #67c401;
+    font-size: 17px;
+    opacity: 50%;
+  }
+
+
+  textarea:focus-visible, input:focus-visible {
+    box-shadow: none;
+    outline: none;
+  }
+
+
+.content  button{
+    margin-top: 18px;
+    margin-left: 10px;
+    width: 140px;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    box-shadow: 1px 1px 10px aqua;
+    color: white;
+    outline: none;
+  }
+
+.content  button:hover{
+    background: #227da6;
+    color: black;
+  }
+
+  .warning {
+    border: 1px solid red;
+  }
+
+  .good {
+    border: 1px solid #67c401 ;
+  }

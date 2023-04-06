@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <title>Digital Signature Tool</title>
+</head>
+
+<body>
+  <h1>Digital Signature Tool</h1>
+  <div class="container">
+    <div>
+      <label for="message">Enter message or document:</label>
+      <br>
+      <textarea id="message" rows="7" cols="50"></textarea>
+      <br>
+      <label for="signature">Generated signature:</label>
+      <br>
+      <textarea id="signature" rows="5" cols="50" readonly></textarea>
+      <br>
+      <button id="generateSignature">Generate Signature</button>
+    </div>
+    <div>
+      <label for="verifyMessage">Enter message or document to verify:</label>
+      <br>
+      <textarea id="verifyMessage" rows="7" cols="50"></textarea>
+      <br>
+      <label for="verifySignature">Enter signature to verify:</label>
+      <br>
+      <textarea id="verifySignature" rows="5" cols="50"></textarea>
+      <br>
+      <button id="verify">Verify Signature</button>
+    </div>
+  </div>
+  <p id="result"></p>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script> -->
+  <script src="crypto-js.js"></script>
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" integrity="sha512-RCV6DdJv+8m+kKGMF6UfVGY3psgc/p1Xs7fZgpljKo35N2+Hsj8R7Sw+ymwj6p1e4FWq3hiJw5Dgkzh+5fYl0w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  <script>
+    const generateSignatureButton = document.getElementById("generateSignature");
+    const verifyButton = document.getElementById("verify");
+    const message = document.getElementById("message");
+    const message1 = document.getElementById("verifyMessage");
+    const signature = document.getElementById("verifySignature");
+
+window.addEventListener("load", (event) => {
+  message.value =""
+  message1.value=""
+  signature.value=""
+  document.getElementById("signature").value = ""
+})
+    // Generate digital signature
+    generateSignatureButton.addEventListener("click", function () {
+      //const message = document.getElementById("message").value;
+      const hash = CryptoJS.SHA256(message.value).toString();
+      document.getElementById("signature").value = hash;
+    });
+
+    // Verify digital signature
+    verifyButton.addEventListener("click", function () {
+      //const message1 = document.getElementById("verifyMessage").value;
+     // const signature = document.getElementById("verifySignature").value;
+      const hash = CryptoJS.SHA256(message1.value).toString();
+      if (hash === signature.value) {
+        document.getElementById("result").innerHTML = "Signature is valid!";
+        
+      } else {
+        document.getElementById("result").innerHTML = "Signature is not valid!";
+      }
+
+    });
+  </script>
+</body>
+
+</html>

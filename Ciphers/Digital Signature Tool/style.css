@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #101111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.container div {
+    text-align: center;
+    margin: 10px 50px;
+}
+
+h1 {
+    text-align: center;
+    margin: 16px;
+    color: white;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 7%;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.tbl {
+    width: 100%;
+}
+
+.table {
+    font-size: 12px;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.table table {
+    border: 1px solid black;
+    font-size: 12px;
+    text-align: center;
+    border-collapse: collapse;
+    border-color: #aaa;
+}
+
+.table td {
+    padding: 0px;
+    vertical-align: inherit;
+    border: 1px solid #000;
+    width: 59px;
+    color: #67c401;
+    font-family: calibri;
+    font-weight: 512;
+}
+
+
+textarea {
+    overflow: auto;
+    resize: none;
+    padding: 13px;
+    font-size: 18px;
+    background: #0000004d;
+    color: #489b41;
+    border: 1px solid #efeeee66;
+    border-radius: 18px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+
+input {
+    resize: none;
+    padding: 13px;
+    font-size: 18px;
+    background: #0000004d;
+    color: #489b41;
+    border: 1px solid #efeeee66;
+    border-radius: 18px;
+    outline: none;
+    width: 62%;
+}
+
+
+
+
+label {
+    font-size: 25px;
+    color: #36a8d5;
+}
+
+button {
+    margin: 18px 0;
+      margin-left: 0px;
+    margin-left: 10px;
+    width: 220px;
+    height: 64px;
+    border-radius: 25px;
+    font-size: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    box-shadow: 1px 1px 10px #36a8d5;
+    color: white;
+    outline: none;
+    transition: .5s ease;
+  }
+
+button:hover {
+    background-color: #36a8d5;
+}
+
+
+#result {
+    color: #67c401;
+    font-size: 25px;
+}
